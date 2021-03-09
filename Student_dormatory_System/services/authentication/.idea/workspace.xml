@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="777bfa88-87fb-4324-8e18-bdd5a5a1bf69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../PersistantAccess/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/../../PersistantAccess/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PersistantAccess/bin/main/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../contract/data-access/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/../contract/data-access/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../contract/web/bin/main/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../contract/web/bin/main/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../contract/web/bin/main/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../contract/web/bin/main/config.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1WGuBFqccbDG9fOo2oc1iVQqZ1b" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.authentication.web.Main" />
+      <module name="authentication-service.web.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.authentication.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="777bfa88-87fb-4324-8e18-bdd5a5a1bf69" name="Default Changelist" comment="" />
+      <created>1578788114312</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578788114312</updated>
+      <workItem from="1578788119485" duration="1676000" />
+      <workItem from="1578830241318" duration="599000" />
+      <workItem from="1578840879449" duration="2071000" />
+      <workItem from="1578950254678" duration="1099000" />
+      <workItem from="1579034358724" duration="3379000" />
+      <workItem from="1579116393959" duration="2889000" />
+      <workItem from="1579163027742" duration="2522000" />
+      <workItem from="1579177406269" duration="339000" />
+      <workItem from="1579199113377" duration="1354000" />
+      <workItem from="1579206272612" duration="1668000" />
+      <workItem from="1580598004011" duration="1448000" />
+      <workItem from="1580642647737" duration="1951000" />
+      <workItem from="1581100756933" duration="595000" />
+      <workItem from="1581449503494" duration="1615000" />
+      <workItem from="1581464511783" duration="1290000" />
+      <workItem from="1581500318242" duration="599000" />
+      <workItem from="1581503752697" duration="1562000" />
+      <workItem from="1581850616367" duration="124000" />
+      <workItem from="1581850775615" duration="1317000" />
+      <workItem from="1581974501392" duration="632000" />
+      <workItem from="1582131305360" duration="659000" />
+      <workItem from="1582653038976" duration="868000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="311" y="58" width="800" height="677" key="#Project_Structure" timestamp="1581506564693">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="311" y="58" width="800" height="677" key="#Project_Structure/67.27.1299.741@67.27.1299.741" timestamp="1581506564693" />
+    <state x="499" y="95" width="424" height="603" key="FileChooserDialogImpl" timestamp="1578845322280">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="499" y="95" width="424" height="603" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1578845322280" />
+    <state width="1253" height="159" key="GridCell.Tab.0.bottom" timestamp="1581468812701">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="159" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1581468812701" />
+    <state width="1253" height="159" key="GridCell.Tab.0.center" timestamp="1581468812700">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="159" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1581468812700" />
+    <state width="1253" height="159" key="GridCell.Tab.0.left" timestamp="1581468812699">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="159" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1581468812699" />
+    <state width="1253" height="159" key="GridCell.Tab.0.right" timestamp="1581468812700">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="159" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1581468812700" />
+    <state x="67" y="27" width="1289" height="741" key="new project wizard" timestamp="1579121187207">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="67" y="27" width="1289" height="741" key="new project wizard/67.27.1299.741@67.27.1299.741" timestamp="1579121187207" />
+  </component>
+</project>

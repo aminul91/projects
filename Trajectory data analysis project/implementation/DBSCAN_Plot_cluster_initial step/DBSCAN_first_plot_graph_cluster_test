@@ -1,0 +1,159 @@
+import numpy as np
+from sklearn.cluster import DBSCAN
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
+import glob
+import os.path
+import datetime
+import os
+from configparser import ConfigParser
+import psycopg2
+import matplotlib.pyplot as plt
+
+ # Create an instance of ConfigParser class.
+dbConfig = ConfigParser()
+# 
+dbConfig.read('database.ini')
+
+countRow = 0
+
+config_params = dbConfig._sections['postgresql']
+
+
+
+
+try:
+    connection = psycopg2.connect(user=config_params['user'],
+                                  password=config_params['password'],
+                                  host=config_params['host'],
+                                  port=config_params['port'],
+                                  database=config_params['database'])
+
+    connection.autocommit=False
+    cursor = connection.cursor()
+
+
+    q = "SELECT * from public.\"geolifeDataset\"  WHERE trajectoryid='20081023025304' "
+    cursor = connection.cursor()
+    cursor.execute(q)
+    data_point = cursor.fetchall()
+    print("Total number of rows for the trajectory 20081023025304 in geolife is: ", cursor.rowcount)
+
+   
+  
+        #print("Name = ", row[1],"\n")
+
+
+except (Exception, psycopg2.Error) as error :
+    if(connection):
+        print("Problem occured: ", error)
+        connection.rollback()
+
+
+finally:
+    #closing database connection.
+    if(connection):
+        cursor.close()
+        connection.close()
+        #print("PostgreSQL connection is closed")
+
+
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+
+M=[]
+N=[]
+for x in data_point:
+    M.append(x[2])
+    N.append(x[3])
+
+#M.append(40.01) some extranoise points
+#N.append(116.29)
+
+
+
+plt.scatter(M,N,c=N)
+
+plt.title('Input Points Before Implementing DBSCAN')
+
+plt.show()
+ 
+    
+    
+#print(data_point)
+
+
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+
+A=[]
+B=[]
+X=[]
+p=[]
+for y in data_point:
+    p.append(y[2])
+    p.append(y[3])
+    X.append(p)
+    p=[]
+#p.append(40.01)
+#p.append(116.29) adding some extra noise to test
+#X.append(p)
+
+#print(X)
+
+
+X = StandardScaler().fit_transform(X)
+
+eps=0.3
+min_sam=10
+db_scan =DBSCAN(eps,min_sam)
+data_plot = db_scan.fit(X)
+data_vec = np.zeros_like(data_plot.labels_, dtype=bool)
+data_vec[data_plot.core_sample_indices_] = True
+labels = data_plot.labels_
+p = len(set(labels))
+x=0
+for y in labels:
+    if y == -1:
+        x=1
+cluster_number = p - x
+
+noise_num = list(labels).count(-1)
+uni_l = set(labels)
+l = len(uni_l)
+q = np.linspace(0, 1,l)
+colors = []
+pp = []
+for color in q:
+    colors.append(plt.cm.Spectral(color))
+arr = zip(uni_l, colors)
+arr=list(arr)
+for val, cluster_col in arr:
+    if val == -1:
+        cluster_col = [0, 0, 1, 1]     # Blue used for noise.
+
+    cluster_vec = []
+    for a in labels:
+        if a == val:
+            cluster_vec.append(True)
+        else:
+            cluster_vec.append(False)
+            
+    graph = X[cluster_vec & data_vec]                # cluster points plotting
+    plt.plot(graph[:, 0], graph[:, 1], 'o', markerfacecolor=tuple(cluster_col),
+             markeredgecolor='k')
+
+    graph_noise_points = X[cluster_vec & ~data_vec]   # noise points plotting
+    plt.plot(graph_noise_points[:, 0], graph_noise_points[:, 1], 'o', markerfacecolor=tuple(cluster_col),
+             markeredgecolor='k')
+
+plt.title('Output after Implementing DBSCAN for clustering')
+plt.show()
+
+print('Number of clester here : %d' % cluster_number)
+print('Number of noise points here: %d' % noise_num)
+print('Clusters are shown with different colors')
+
+
