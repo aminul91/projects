@@ -1,4 +1,4 @@
-# task2-groupA
+# First part
 
 **Implementation**
 
@@ -35,7 +35,7 @@ The final implementaion and commit process of DBSCAN is present in staypoint_det
  Final_report_groupA.pdf #ab4a9583b98b4b9f2b8dde1aa367c34290db7c58
 
 
-# task4-groupA
+# 2nd part(Trajectory data for Bamberg city)
 
 ** DATA INSERTION
 	*Everyone data as csv file is in the folder GroupAdata_task4_Backup.Outdoor data is different folder according to the name. Indoor  	     data ground truth in single file for all members.
