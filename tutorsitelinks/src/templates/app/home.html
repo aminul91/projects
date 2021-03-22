@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %} 
+<section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+     <div class="container">
+
+          <div class="navbar-header">
+               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+               </button>
+
+               <!-- lOGO TEXT HERE -->
+               <a href="#" class="navbar-brand">TUTOR-SITE-lINKS</a>
+          </div>
+
+          <!-- MENU LINKS -->
+          <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav navbar-nav-first">
+                   
+                    <li><a href="{% url 'app:homepage' %}" class="smoothScroll">Home</a></li>
+                    
+                    <li><a href="#courses" class="smoothScroll">Topic</a></li>
+                    <li><a href="#feature" class="smoothScroll">API</a></li>
+                    <li><a href="{% url 'app:api_links' %}" class="smoothScroll">API_LINKS</a></li>
+                    <li><a href="#contact" class="smoothScroll">Contact</a></li>
+               </ul>
+
+               <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.mdaminul.info/" target="blank"><i class="fa fa-laptop"></i> mdaminul.info</a></li>
+               </ul>
+          </div>
+          
+     </div>
+     
+</section>
+<section id="about">
+    <div class="container">
+         <div class="row">
+
+              <div class="col-md-6 col-sm-12">
+                   <div class="about-info">
+                        <h2>Here you can find most popular tutorial's links about different topics</h2>
+
+                        <figure>
+                             <span><i class="fa fa-book"></i></span>
+                             <figcaption>
+                                  <h3>Various topic</h3>
+                                  <p style="color: black;">Choose your online tutorial according to your topic</p>
+                             </figcaption>
+                        </figure>
+
+                        <figure>
+                             <span><i class="fa fa-laptop"></i></span>
+                             <figcaption>
+                                  <h3>API</h3>
+                                  <p style="color: black;">We have developed an API. Here you can provide topic name and language to get the most famous tutorials for the topic via REST API</p>
+                             </figcaption>
+                        </figure>
+
+                        <figure>
+                             <span><i class="fa fa-users"></i></span>
+                             <figcaption>
+                                  <h3>Login</h3>
+                                  <p style="color: black;">You can sign up to get info about the latest tutorials for your topic</p>
+                             </figcaption>
+                        </figure>
+                   </div>
+              </div>
+
+              <div class="col-md-offset-1 col-md-4 col-sm-12">
+                   <div class="entry-form" style="background-image: url('{% static "app/img/image/studentlearning.jpg" %}');">
+                    
+                   </div>
+              </div>
+
+         </div>
+    </div>
+</section>
+<!-- Courses -->
+<section id="courses">
+    <div class="container">
+         <div class="row">
+
+              <div class="col-md-12 col-sm-12">
+                   <div class="section-title">
+                        <h2>Popular Courses <small>Upgrade your skills with newest courses</small></h2>
+                   </div>
+
+                   <div class="owl-carousel owl-theme owl-courses">
+                    {% for user in shumon %}
+                    {% for tutor in user.tutorial %}
+                        <div class="col-md-4 col-sm-4 " >
+                             <div class="item ">
+                                  <div class="courses-thumb">
+                                       <div class="courses-top">
+                                            <div class="courses-image">
+                                                 <img src="{% static "" %}app/img/image/{{tutor.type_name}}.jpg" class="img-responsive" alt=""  style="height:200px;">
+                                            </div>
+                                            <div class="courses-date">
+                                                 
+                                                 <span><i class="fa fa-money"></i> Free</span>
+                                            </div>
+                                       </div>
+
+                                       <div class="courses-detail">
+                                             
+                                            <h3><a href="#">{{ tutor.type_name }}</a></h3>
+                                            <p>Click here to see the list of tutorials about {{ tutor.type_name }}</p>
+                                       </div>
+
+                                       <div class="courses-info">
+                                        <form action="{% url 'app:tutor_topic' %}" method="POST">
+                                             {% csrf_token %}
+                                             <input type="number" name= "type_val" value = "{{ tutor.type_value }}" hidden>
+                                            <div class="courses-price">
+                                                 <b><input type="submit" value="SEE TUTORIALS"></b>
+                                            </div>
+
+                                        </form>
+                                       </div>
+                                  </div>
+                             </div>
+                        </div>
+
+                        
+                        {% endfor %}
+                        {% endfor %}   
+                        
+
+                   </div>
+
+         </div>
+    </div>
+</section>
+<section id="feature">
+         
+    <div class="container">
+         
+         <div class="row">
+              <div class="col-md-12 col-sm-12">
+                   <div class="section-title" style="text-align: center;">
+                        <h2>API GUIDELINE <small>User guideline for API</small></h2>
+                   </div>
+              <div class="col-md-4 col-sm-4">
+                   <div class="feature-thumb">
+                        <span>tutorial-sitelink API</span>
+                        <h4>Implemented with Django REST framework</h4>
+                        <p>Provide language name to get the links of tutorials of a specificlanguage </p>
+                        <p>Provide topic name and language to get the links of tutorials abouth the topic at specific language </p>
+                   </br>
+                        <p>Need to follow the APi format</p>
+                    </div>
+              </div>
+
+              <div class="col-md-4 col-sm-5">
+                   <div class="feature-thumb">
+                        <span>ENDPOINTS</span>
+                        <h4>Endpoints are given below</h4>
+                        <a href="{{ shumon.0.path_url}}" target="blank"><p>{{ shumon.0.path_url}}</p></a>
+                        <p style="font-size: 13px;">{{ shumon.0.path_url_language}}</p>
+                        <p style="font-size: 13px;">{{ shumon.0.path_url_topic}}</p>
+                        <a href="{{ shumon.0.example1}}" target="blank"><p>Example 1(Language)</p></a>
+                        
+                       <p>Language topic and Topic name starts with capital example:English</p>
+                   </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4">
+                   <div class="feature-thumb">
+                        <span>Client app</span>
+                        <h3>Client app with DB</h3>
+                        <p>This application is working as client app for our API . </p>
+                        <p>The app is invoking data with REST API and showing output.</p>
+                    </br>
+               </br>
+          </br></br></br>
+                   </div>
+              </div>
+         </div>
+         </div>
+    
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+         <div class="row">
+
+              <div class="col-md-6 col-sm-12">
+                   <form id="contact-form" role="form" action="" method="post">
+                        <div class="section-title">
+                             <h2>Provide us suggestion <small>Provide us suggestion so that we can improve out API!</small></h2>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12">
+                             <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
+              
+                             <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
+
+                             <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
+                        </div>
+
+                        <div class="col-md-4 col-sm-12">
+                             <input type="submit" class="form-control" name="send message" value="Send Message">
+                        </div>
+
+                   </form>
+              </div>
+
+              <div class="col-md-6 col-sm-12">
+                   <div class="contact-image">
+                        <img src="{% static "" %}app/img/image/contact-image.jpg" class="img-responsive" alt="Smiling Two Girls">
+                   </div>
+              </div>
+
+         </div>
+    </div>
+</section>       
+
+{% endblock content %}

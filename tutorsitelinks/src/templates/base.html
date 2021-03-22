@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>TUTOR-SITES-LINKS</title>
+        <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app/css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'app/css/owl.theme.default.min.css' %}">
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="{% static 'app/css/templatemo-style.css' %}">
+        <!-- Favicon -->
+        <link rel="icon" href="{% static 'app/img/favicon/t.jpg' %}" type="image/x-icon">
+
+
+    </head>
+    <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50" style="background-color: gainsboro;zoom: 100%;">
+     <!-- PRE LOADER -->
+    
+
+
+     <!-- MENU -->
+    
+    <div>
+        
+   {% block content %}
+   {% endblock content %}
+  
+    </div>
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                       <div class="footer-info">
+                            <div class="section-title">
+                                 <h2>Application</h2>
+                            </div>
+                            <address>
+                                 <p>Develper zone</p>
+                            </address>
+
+                            <ul class="social-icon">
+                                 <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                 <li><a href="#" class="fa fa-twitter"></a></li>
+                                 <li><a href="#" class="fa fa-instagram"></a></li>
+                            </ul>
+
+                            <div class="copyright-text"> 
+                                 <p>Germany</p>
+                                 
+                                 <p>Bayern</p>
+                            </div>
+                       </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-6">
+                       <div class="footer-info">
+                            <div class="section-title">
+                                 <h2>Contact Info</h2>
+                            </div>
+                            <address>
+                                 <p>+491745258507</p>
+                                 <p><a href="mailto:youremail.co">sumon2907@gmail.com</a></p>
+                            </address>
+
+                            <div class="footer_menu">
+                                 <h2>Quick Links</h2>
+                                 <ul>
+                                      <li><a href="#">Career</a></li>
+                                      <li><a href="#">Investor</a></li>
+                                      <li><a href="#">Terms & Conditions</a></li>
+                                      <li><a href="#">Refund Policy</a></li>
+                                 </ul>
+                            </div>
+                       </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-12">
+                       <div class="footer-info newsletter-form">
+                            <div class="section-title">
+                                 <h2>Newsletter Signup</h2>
+                            </div>
+                            <div>
+                                 <div class="form-group">
+                                      <form action="#" method="get">
+                                           <input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required="">
+                                           <input type="submit" class="form-control" name="submit" id="form-submit" value="Send me">
+                                      </form>
+                                      <span><sup>*</sup> Please note - we do not spam your email.</span>
+                                 </div>
+                            </div>
+                       </div>
+                  </div>
+                  
+             </div>
+        </div>
+   </footer>
+
+
+   <!-- SCRIPTS -->
+   <script src="{% static 'app/js/jquery.js'%}"></script>
+   <script src="{% static 'app/js/bootstrap.min.js'%}"></script>
+   <script src="{% static 'app/js/owl.carousel.min.js'%}"></script>
+   <script src="{% static 'app/js/smoothscroll.js'%}"></script>
+   <script src="{% static 'app/js/custom.js'%}"></script>
+
+    </body>
+</html>
