@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <display-name>HelloAppEngine</display-name>
+
+    <!-- Servlets -->
+
+
+    <servlet-mapping>
+        <servlet-name>VotersServlet</servlet-name>
+        <url-pattern>/admin/voterlist</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>VotersServlet</servlet-name>
+        <servlet-class>com.example.appengine.java8.Servlet.VotersServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Candidates</servlet-name>
+        <url-pattern>/admin/candidates</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Candidates</servlet-name>
+        <servlet-class>com.example.appengine.java8.Servlet.CandidatesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EmailSender</servlet-name>
+        <url-pattern>/admin/emailSender</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EmailSender</servlet-name>
+        <servlet-class>com.example.appengine.java8.Servlet.EmailServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>VoteTime</servlet-name>
+        <url-pattern>/admin/votingtime</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>VoteTime</servlet-name>
+        <servlet-class>com.example.appengine.java8.Servlet.VoteTimeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UploadVoterServelet</servlet-name>
+        <url-pattern>/admin/uploadfile</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UploadVoterServelet</servlet-name>
+        <servlet-class>com.example.appengine.java8.Servlet.UploadVoterServelet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>VoteCasting</servlet-name>
+        <url-pattern>/public/votecastingbooth</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>VoteCasting</servlet-name>
+        <servlet-class>com.example.appengine.java8.Servlet.VoteCastingServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>VoteResult</servlet-name>
+        <url-pattern>/public/votingresult</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>VoteResult</servlet-name>
+        <servlet-class>com.example.appengine.java8.Servlet.VoteResultServlet</servlet-class>
+    </servlet>
+
+
+
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>admin</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+</web-app>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+    <cron>
+        <url>/admin/emailSender</url>
+        <description>Reminder email</description>
+        <!--<schedule>every day 00:18</schedule>-->
+        <schedule>every 24 hours</schedule>
+        <timezone>Europe/Berlin</timezone>
+    </cron>
+</cronentries>
