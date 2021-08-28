@@ -21,12 +21,15 @@
           <div class="collapse navbar-collapse">
                <ul class="nav navbar-nav navbar-nav-first">
                    
-                    <li><a href="{% url 'app:homepage' %}" class="smoothScroll">Home</a></li>
+                    <li><a href="#" class="smoothScroll">Home</a></li>
                     
                     <li><a href="#courses" class="smoothScroll">Topic</a></li>
                     <li><a href="#feature" class="smoothScroll">API</a></li>
-                    <li><a href="{% url 'app:api_links' %}" class="smoothScroll">API_LINKS</a></li>
-                    <li><a href="#contact" class="smoothScroll">Contact</a></li>
+                    <!--
+                    <li><a href="{% url 'app:tutor_topic' %}" class="smoothScroll">API_LINKS</a></li>
+                    -->
+                    <li><a href="#contact" class="smoothScroll">Report</a></li>
+                    <li><a href="#last" class="smoothScroll">Contact</a></li>
                </ul>
 
                <ul class="nav navbar-nav navbar-right">
@@ -76,7 +79,7 @@
                     
                    </div>
               </div>
-
+              
          </div>
     </div>
 </section>
@@ -87,11 +90,11 @@
 
               <div class="col-md-12 col-sm-12">
                    <div class="section-title">
-                        <h2>Popular Courses <small>Upgrade your skills with newest courses</small></h2>
+                        <h2>Popular Courses <small style="color: blue">Upgrade your skills with newest courses</small></h2>
                    </div>
 
                    <div class="owl-carousel owl-theme owl-courses">
-                    {% for user in shumon %}
+                    {% for user in data_list %}
                     {% for tutor in user.tutorial %}
                         <div class="col-md-4 col-sm-4 " >
                              <div class="item ">
@@ -143,42 +146,34 @@
          <div class="row">
               <div class="col-md-12 col-sm-12">
                    <div class="section-title" style="text-align: center;">
-                        <h2>API GUIDELINE <small>User guideline for API</small></h2>
+                        <h2>API GUIDELINE <small style="color: blue;">User guideline for API</small></h2>
                    </div>
               <div class="col-md-4 col-sm-4">
                    <div class="feature-thumb">
                         <span>tutorial-sitelink API</span>
                         <h4>Implemented with Django REST framework</h4>
-                        <p>Provide language name to get the links of tutorials of a specificlanguage </p>
-                        <p>Provide topic name and language to get the links of tutorials abouth the topic at specific language </p>
-                   </br>
-                        <p>Need to follow the APi format</p>
+                        <p>Provide topic name and language to get the links of tutorial via REST API </p>
+                       
                     </div>
               </div>
 
-              <div class="col-md-4 col-sm-5">
+              <div class="col-md-4 col-sm-4">
                    <div class="feature-thumb">
                         <span>ENDPOINTS</span>
-                        <h4>Endpoints are given below</h4>
-                        <a href="{{ shumon.0.path_url}}" target="blank"><p>{{ shumon.0.path_url}}</p></a>
-                        <p style="font-size: 13px;">{{ shumon.0.path_url_language}}</p>
-                        <p style="font-size: 13px;">{{ shumon.0.path_url_topic}}</p>
-                        <a href="{{ shumon.0.example1}}" target="blank"><p>Example 1(Language)</p></a>
-                        
-                       <p>Language topic and Topic name starts with capital example:English</p>
-                   </div>
+                        <h3>Endpoints are given below</h3>
+                       <h6 > <a href="{{ data_list.0.path_url}}" target="blank">{{ data_list.0.path_url}}</a></h6>
+                       <h6 > {{ data_list.0.path_url_language}}</h6>
+                       <h6>language name will be small letter</h6>
+                    </div>
               </div>
 
               <div class="col-md-4 col-sm-4">
                    <div class="feature-thumb">
                         <span>Client app</span>
                         <h3>Client app with DB</h3>
-                        <p>This application is working as client app for our API . </p>
-                        <p>The app is invoking data with REST API and showing output.</p>
-                    </br>
-               </br>
-          </br></br></br>
-                   </div>
+                        <p>This application is working as client app for our API . The app is invoking data with REST API and showing output</p>
+                                        
+                    </div>
               </div>
          </div>
          </div>
@@ -188,37 +183,73 @@
 
 <section id="contact">
     <div class="container">
+     <div class="section-title" style="text-align: center;">
+          <h2>REPORTING <small style="color: white;"><b>Information about the tutorial links in this sites</b></small></h2>
+     </div>
          <div class="row">
-
-              <div class="col-md-6 col-sm-12">
-                   <form id="contact-form" role="form" action="" method="post">
-                        <div class="section-title">
-                             <h2>Provide us suggestion <small>Provide us suggestion so that we can improve out API!</small></h2>
-                        </div>
-
-                        <div class="col-md-12 col-sm-12">
-                             <input type="text" class="form-control" placeholder="Enter full name" name="name" required="">
-              
-                             <input type="email" class="form-control" placeholder="Enter email address" name="email" required="">
-
-                             <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required=""></textarea>
-                        </div>
-
-                        <div class="col-md-4 col-sm-12">
-                             <input type="submit" class="form-control" name="send message" value="Send Message">
-                        </div>
-
-                   </form>
+          
+              <div class="col-md-6 col-sm-6">
+               <div id="piechart_3d" style="height: 400px;"></div>
               </div>
 
-              <div class="col-md-6 col-sm-12">
-                   <div class="contact-image">
-                        <img src="{% static "" %}app/img/image/contact-image.jpg" class="img-responsive" alt="Smiling Two Girls">
-                   </div>
+              <div class="col-md-6 col-sm-6">
+               <div id="myChart" style="height: 400px;"></div>
+              
               </div>
 
          </div>
     </div>
-</section>       
+</section>
+
+<section id="last">
+     
+      
+ </section>
+<script type="text/javascript">
+     google.charts.load("current", {packages:["corechart"]});
+     google.charts.setOnLoadCallback(drawChart);
+     function drawChart() {
+       var data = google.visualization.arrayToDataTable([
+         ['Tutorials type', 'Numbers'],
+         ['Programming',    2],
+         ['Cooking',      3],
+         ['Language',  1],
+         ['Web development', 1],
+       ]);
+
+       var options = {
+         title: 'Tutorials Type',
+         is3D: true,
+       };
+
+       var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+       chart.draw(data, options);
+     }
+   </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+     var qq = [
+     ['Language', 'Tutorials Numbers', {role: 'style'}],
+     ['English', 2, 'fill-color: gray; fill-opacity: 0.2'],
+     ['Deutsch', 2, 'fill-color: red; fill-opacity: 0.2'],
+     ['Italian', 1, 'fill-color: blue; fill-opacity: 0.2'],
+     ['Spanish', 2, 'stroke-color: #703593; fill-color: #C5A5CF'],
+     
+     ]
+     function drawChart() {
+     var data = google.visualization.arrayToDataTable(qq);
+
+        var options = {
+          title: 'Tutorial Language',
+          is3D: true,
+         
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('myChart'));
+        chart.draw(data, options);
+      }
+    </script>
 
 {% endblock content %}
