@@ -7,6 +7,6 @@ Voting MAchine System: A web application for online voting system. Google App En
 
 Student Dormatory System: A Master level Project which is basically a web application for Student Dormatory System. Programming language java.Databse MySQL DB
 
-Tutor-site-links : And API developed with Django rest framework. Various tutorials links about different topic can be found with the REST API
+Tutor-site-links : An application for different tutorials on different topic. An REST API developed with Django rest framework which is link tutor. Various tutorials links about different topic can be found with the REST API. Client app URL: https://tutorsitelinks.herokuapp.com/   REST API URL : https://linktutor.herokuapp.com/tutorials/
 
 

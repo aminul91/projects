@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %} 
+
+
+<!-- Courses -->
+
+<section id="feature">
+         
+    <div class="container">
+         
+         <div class="row">
+              <div class="col-md-12 col-sm-12">
+                   
+             
+
+              <div class="col-md-4 col-sm-4">
+                   <div class="feature-thumb">
+                      <h2>API Documentation:</h2>
+                        <h2>Endpoints:</h2>
+                       <h4 > <a href="{{ data_list.0.path_url}}" target="blank">{{ data_list.0.path_url}}</a></h4>
+                       <h4 > {{ data_list.0.path_url_language}}</h4>
+                       <h4>language name will be small letter</h4>
+                    </div>
+              </div>
+
+             
+         </div>
+         </div>
+    
+    </div>
+</section>
+
+
+
+<section id="last">
+     
+      
+ </section>
+
+
+{% endblock content %}
