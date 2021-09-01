@@ -1,0 +1,5 @@
+python-3.7.9
+
+# For this project virtual environement name
+
+conda activate rest

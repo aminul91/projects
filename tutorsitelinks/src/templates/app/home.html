@@ -67,8 +67,8 @@
                         <figure>
                              <span><i class="fa fa-users"></i></span>
                              <figcaption>
-                                  <h3>Login</h3>
-                                  <p style="color: black;">You can sign up to get info about the latest tutorials for your topic</p>
+                                  <h3>Authentication Token</h3>
+                                  <p style="color: black;">You can accsess GET operation. For Other operation you required Authentication Token</p>
                              </figcaption>
                         </figure>
                    </div>
@@ -150,9 +150,10 @@
                    </div>
               <div class="col-md-4 col-sm-4">
                    <div class="feature-thumb">
-                        <span>tutorial-sitelink API</span>
+                        <span>Link Tutor API</span>
                         <h4>Implemented with Django REST framework</h4>
                         <p>Provide topic name and language to get the links of tutorial via REST API </p>
+                        <p>For POST,PUT,DELETE operation Authentication token required </p>
                        
                     </div>
               </div>
@@ -163,7 +164,9 @@
                         <h3>Endpoints are given below</h3>
                        <h6 > <a href="{{ data_list.0.path_url}}" target="blank">{{ data_list.0.path_url}}</a></h6>
                        <h6 > {{ data_list.0.path_url_language}}</h6>
-                       <h6>language name will be small letter</h6>
+                       <h6 > <a href="{{ data_list.0.auth_url}}" target="blank">{{ data_list.0.auth_url}}</a></h6>
+                       <h5>Language name will be small letter here</h5>
+                   </br>
                     </div>
               </div>
 
@@ -171,8 +174,9 @@
                    <div class="feature-thumb">
                         <span>Client app</span>
                         <h3>Client app with DB</h3>
-                        <p>This application is working as client app for our API . The app is invoking data with REST API and showing output</p>
-                                        
+                        <p>This application works as client app for API</p>
+                         <p>The app is invoking data with REST API and showing output with reporting</p>
+                    </br>  </br>             
                     </div>
               </div>
          </div>

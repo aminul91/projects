@@ -7,23 +7,24 @@ from app.serializers import *
 from app.models import *
 from django.views.generic.base import TemplateView
 from django.urls import reverse
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
 class HomeView(TemplateView):
     template_name = "app/home.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        response= requests.get('https://linktutor.herokuapp.com/tutorials/')  
+        domain = "https://linktutor.herokuapp.com/tutorials/"
+        domain_auth_url = "https://linktutor.herokuapp.com/tutorial_insert/"
+        response= requests.get(domain)  
         data_r = response.json()
-        print(data_r)
         #language_url = self.request.build_absolute_uri(reverse('language', args=("english")))
 
         context['data_list'] = []
-        domain = "https://linktutor.herokuapp.com/tutorials/"
-        
         domain_language=domain+"language"
         chart2_data = []
-        context["data_list"].append({"tutorial":data_r,"path_url":domain,"path_url_language":domain_language,"Chart_t":chart2_data})
+        context["data_list"].append({"tutorial":data_r,"path_url":domain,"auth_url":domain_auth_url,"path_url_language":domain_language,"Chart_t":chart2_data})
         return context
 
 class TopicView():
@@ -37,17 +38,16 @@ class TopicView():
         if request.method == "POST":
             type_val_info = request.POST.get('type_val')
             type_val_info = int(type_val_info)
-        print(type_val_info)
         data_r = tutorials_paths.objects.filter(type_value = type_val_info)
         context["data_view"].append({"type_val": type_val_info,"tutor_data":data_r})
         return render(request,"app/tutorials.html",context)
 
-class ApiView():
-    @api_view(['GET'])
-    def tutorials_links(request):
+class ApiView(APIView):
+    def get(self,request):
         data_r = tutorials_paths.objects.all()
         serial_data = linksSerializer(data_r,many = True)
         return Response(serial_data.data)
+
 
 
 def api_links(request):
@@ -66,10 +66,8 @@ class ApiInfo():
     @api_view(['GET'])
     def values(request,username):
         num=0
-        print(username)
         username=str(username)
         data_r = language_types.objects.filter(language_name=username)
-        print("pp")
         for req in data_r:
             print(req.language_name)
             num=int(req.language_value)
@@ -78,8 +76,6 @@ class ApiInfo():
         return Response(serial_data.data)
 
 def values_double(request,language,tutorial):
-    print(language)
-    print(tutorial)
     context = { 
                "data_view" : []
                

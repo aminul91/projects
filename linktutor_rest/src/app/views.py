@@ -7,6 +7,8 @@ from app.serializers import *
 from app.models import *
 from django.views.generic.base import TemplateView
 from django.urls import reverse
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
 class HomeView(TemplateView):
     template_name = "app/home.html"
@@ -38,10 +40,28 @@ class TopicView():
         return render(request,"app/tutorials.html",context)
 
 class ApiView(APIView):
+    
+    def get(self,request):
+        data_r = tutorials_paths.objects.all()
+        serial_data = linksSerializer(data_r,many = True)
+        authentication_classes = [SessionAuthentication, BasicAuthentication]
+        permission_classes = [IsAuthenticated]
+        return Response(serial_data.data)
+
+class ApiInsert(APIView):
+    authentication_classes = [BasicAuthentication, TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self,request):
         data_r = tutorials_paths.objects.all()
         serial_data = linksSerializer(data_r,many = True)
         return Response(serial_data.data)
+
+    def post(self,request):
+        serializer = linksSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class ApiInfo():
     @api_view(['GET'])
