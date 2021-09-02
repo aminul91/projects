@@ -1,0 +1,4 @@
+{
+    "get_url": "https://linktutor.herokuapp.com/tutorials/",
+    "other_operation_url": "https://linktutor.herokuapp.com/tutorial_insert/"
+}

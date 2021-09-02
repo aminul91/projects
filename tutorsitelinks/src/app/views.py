@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, get_object_or_404, redirect
-import requests
+import requests, json
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -15,12 +15,9 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        domain = "https://linktutor.herokuapp.com/tutorials/"
-        domain_auth_url = "https://linktutor.herokuapp.com/tutorial_insert/"
+        domain,domain_auth_url = url_endpoint()
         response= requests.get(domain)  
         data_r = response.json()
-        #language_url = self.request.build_absolute_uri(reverse('language', args=("english")))
-
         context['data_list'] = []
         domain_language=domain+"language"
         chart2_data = []
@@ -87,3 +84,20 @@ def host_for_endpoint(request):
     path_url =""
     path_url = request.build_absolute_uri
     return path_url
+
+def url_endpoint():
+    try:
+        with open("config/config.json") as json_file:
+                json_data = json.load(json_file)
+                if json_data is not None:
+                    domain_public = json_data["get_url"]
+                    domain_protected = json_data["other_operation_url"]
+                    json_file.close()
+                    return domain_public,domain_protected
+                else:
+                    print("json file is empty")
+    except IOError:
+        print("file not found")
+
+    except ValueError:
+        print("No information from Config file")
