@@ -24,5 +24,4 @@ urlpatterns = [
     path('tutorials/', views.ApiView.as_view(),name="tutorials"),
     path('tutorial_insert/', views.ApiInsert.as_view(),name="tutorial_insert"),
     path('tutorials/<str:language>/', views.ApiInfo.values, name="language"),
-    #path('tutorials/<str:language>/<str:tutorial>', views.values_double),
 ]

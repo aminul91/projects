@@ -10,6 +10,8 @@ from django.urls import reverse
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
+"""Here different function are implemented different way & techniques as it is personal and practice project. Production level project should be same way with consistency  """
+
 class HomeView(TemplateView):
     template_name = "app/home.html"
 
@@ -44,8 +46,6 @@ class ApiView(APIView):
     def get(self,request):
         data_r = tutorials_paths.objects.all()
         serial_data = linksSerializer(data_r,many = True)
-        authentication_classes = [SessionAuthentication, BasicAuthentication]
-        permission_classes = [IsAuthenticated]
         return Response(serial_data.data)
 
 class ApiInsert(APIView):
