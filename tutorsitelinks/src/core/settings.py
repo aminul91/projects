@@ -27,7 +27,7 @@ TEMPLATE_DIR = BASE_DIR / 'templates'
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'dl3@ku5*n5xbpn-u5n0y@#07kl*1a^_!agar2rcxifxf*sw0&d'
+SECRET_KEY = config('param')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # True for development server, false for production server.
