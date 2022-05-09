@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "fb6691fd-0ed8-4ba0-9eaf-c19f3cdd0b31",
+		"name": "Customer Login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api.herokuapp.com/customer/api/v1/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json(); ",
+							"pm.environment.set(\"token\", jsonData.token); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n \"username\":\"salman\", \n \"password\":\"salman1234\" \n} "
+				},
+				"url": {
+					"raw": "{{baseUrl}}/customer/api/v1/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"customer",
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/customer/api/v1/list",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"customer",
+						"api",
+						"v1",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_by_parmeter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add_customer",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let id=_.random(1000, 9999) ",
+							"pm.environment.set(\"id\",id ); ",
+							"const reqObject = {",
+							" url: 'https://api.namefake.com/english-united-states/male/',  method: 'GET', ",
+							" header: 'Content-Type:application/json' ",
+							"}; ",
+							"pm.sendRequest(reqObject, (err, res) => { ",
+							" let {name} = res.json() ",
+							" let {phone_w}=res.json() ",
+							" let {email_u} = res.json() ",
+							" let email=email_u+'@testmail.com' ",
+							"  ",
+							" pm.environment.set(\"name\", name); ",
+							" pm.environment.set(\"email\", email); ",
+							" pm.environment.set(\"phone_number\", phone_w); ",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () { ",
+							" pm.response.to.have.status(201); ",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n \"id\":{{id}}, \n \"name\":\"{{name}}\", \n \"email\":\"{{email}}\", \n \"address\":\"Gulshan, Dhaka\", \n \"phone_number\":\"{{phone_number}}\" \n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/customer/api/v1/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"customer",
+						"api",
+						"v1",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updateuser_dynamic",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let id=_.random(1000, 9999) ",
+							"pm.environment.set(\"id\",id ); ",
+							"const reqObject = {",
+							" url: 'https://api.namefake.com/english-united-states/male/',  method: 'GET', ",
+							" header: 'Content-Type:application/json' ",
+							"}; ",
+							"pm.sendRequest(reqObject, (err, res) => { ",
+							" let {name} = res.json() ",
+							" let {phone_w}=res.json() ",
+							" let {email_u} = res.json() ",
+							" let email=email_u+'@testmail.com' ",
+							"  ",
+							" pm.environment.set(\"name\", name); ",
+							" pm.environment.set(\"email\", email); ",
+							" pm.environment.set(\"phone_number\", phone_w); ",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () { ",
+							" pm.response.to.have.status(201); ",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n \"id\":{{id}}, \n \"name\":\"Rahim Uddin\", \n \"email\":\"rahim@test.com\", \n \"address\":\"Gulshan, Dhaka\", \n \"phone_number\":\"01502212471\" \n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/customer/api/v1/update/{{id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"customer",
+						"api",
+						"v1",
+						"update",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let id= 2677; ",
+							"pm.environment.set(\"id\",id ); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://customer-test-api.herokuapp.com/customer/api/v1/delete/{{id}}",
+					"protocol": "https",
+					"host": [
+						"customer-test-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customer",
+						"api",
+						"v1",
+						"delete",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

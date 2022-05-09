@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from app.serializers import *
-from app.models import *
+import config
 from django.views.generic.base import TemplateView
 from django.urls import reverse
 from rest_framework.permissions import IsAuthenticated
@@ -15,6 +15,10 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+<<<<<<< HEAD
+=======
+        json_data={}
+>>>>>>> d9ca1449747444b405915480871cc78dbf273661
         domain,domain_auth_url = url_endpoint()
         response= requests.get(domain)  
         data_r = response.json()
@@ -86,6 +90,7 @@ def host_for_endpoint(request):
     return path_url
 
 def url_endpoint():
+<<<<<<< HEAD
     try:
         with open("config/config.json") as json_file:
                 json_data = json.load(json_file)
@@ -101,3 +106,8 @@ def url_endpoint():
 
     except ValueError:
         print("No information from Config file")
+=======
+    domain = "https://linktutor.herokuapp.com/tutorials/"
+    domain_auth = "https://linktutor.herokuapp.com/tutorial_insert/"
+    return domain,domain_auth
+>>>>>>> d9ca1449747444b405915480871cc78dbf273661

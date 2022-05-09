@@ -1,0 +1,7 @@
+
+<url>
+   <domain name = "https://linktutor.herokuapp.com/tutorials/"> 
+   </domain>
+   <domain_auth name="https://linktutor.herokuapp.com/tutorial_insert/"> 
+   </domain_auth>
+</url>
