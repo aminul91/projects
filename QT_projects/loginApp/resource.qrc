@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/resource">
+        <file>img/studentlearning.jpg</file>
+        <file>img/FJIpcsiX0AIPZsY.png</file>
+        <file>img/exit.jpg</file>
+        <file>img/Load.png</file>
+        <file>img/New.png</file>
+        <file>img/A.png</file>
+        <file>img/B.png</file>
+        <file>img/C.png</file>
+    </qresource>
+</RCC>

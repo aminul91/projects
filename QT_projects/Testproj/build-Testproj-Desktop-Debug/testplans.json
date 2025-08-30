@@ -1,0 +1,7 @@
+{
+  "test_plans": [
+    { "name": "Login Module", "test_cases": 5, "status": "done" },
+    { "name": "Payment Gateway", "test_cases": 8, "status": "running" },
+    { "name": "Settings Panel", "test_cases": 3, "status": "not started" }
+  ]
+}

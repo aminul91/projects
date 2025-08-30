@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+db9eca79ba47c1dabc5390d4dcc42734 /home/aminul/QT_proj/Testproj/Testproj/TicketProj_en_AU.ts
+9314bac2334df1a4d2ac4a254cd6a3a0 CMakeFiles/testProj_autogen

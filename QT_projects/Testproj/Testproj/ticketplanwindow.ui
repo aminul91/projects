@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ticketPlanWindow</class>
+ <widget class="QWidget" name="ticketPlanWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tickets and WorkPlans</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>10</y>
+     <width>261</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Tickets overview</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="logOut">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>240</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Logout</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="ticketPlanTable">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>381</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <row>
+    <property name="text">
+     <string/>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string/>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string/>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>Task name</string>
+    </property>
+    <property name="foreground">
+     <brush brushstyle="SolidPattern">
+      <color alpha="255">
+       <red>0</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </brush>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>work plan</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>status</string>
+    </property>
+   </column>
+   <item row="0" column="0">
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item row="0" column="1">
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item row="0" column="2">
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item row="1" column="0">
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item row="1" column="1">
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item row="1" column="2">
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item row="2" column="0">
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item row="2" column="1">
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item row="2" column="2">
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,8 @@
+/home/aminul/QT_proj/Testproj/build-Testproj-Desktop-Default/CMakeFiles/testProj.dir
+/home/aminul/QT_proj/Testproj/build-Testproj-Desktop-Default/CMakeFiles/edit_cache.dir
+/home/aminul/QT_proj/Testproj/build-Testproj-Desktop-Default/CMakeFiles/rebuild_cache.dir
+/home/aminul/QT_proj/Testproj/build-Testproj-Desktop-Default/CMakeFiles/list_install_components.dir
+/home/aminul/QT_proj/Testproj/build-Testproj-Desktop-Default/CMakeFiles/install.dir
+/home/aminul/QT_proj/Testproj/build-Testproj-Desktop-Default/CMakeFiles/install/local.dir
+/home/aminul/QT_proj/Testproj/build-Testproj-Desktop-Default/CMakeFiles/install/strip.dir
+/home/aminul/QT_proj/Testproj/build-Testproj-Desktop-Default/CMakeFiles/testProj_autogen.dir
