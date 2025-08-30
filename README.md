@@ -9,6 +9,8 @@ Student Dormatory System: A Master level Project which is basically a web applic
 
 Tutor-site-links : An application for different tutorials on different topic. An REST API developed with Django rest framework which is link tutor. Various tutorials links about different topic can be found with the REST API. Client app URL: https://tutorsitelinks.herokuapp.com/   REST API URL : https://linktutor.herokuapp.com/tutorials/
 
+QT Projects: Here are some QT projects developed by C++ language.
+
 I have attended lots of projects as developer. The most important projects are attached in this repositiory. 
 
 
